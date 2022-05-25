@@ -8,23 +8,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MyController {
 
   //===================================================================
-  // NOT FILTERED
-  //===================================================================
-  @ResponseBody
-  @RequestMapping("/NotFiltered")
-  public String notFiltered() {
-    System.out.println("CONTROLLER: NOT Filtered");
-    return "Hello from NOT Filtered Endpoint";
-  }
-
-  //===================================================================
   // FILTERED
   //===================================================================
   @ResponseBody
-  @RequestMapping("/Filtered")
-  public String filtered() {
+  @RequestMapping("Filtered")
+  String filtered() {
     System.out.println("CONTROLLER: Filtered");
     return "Hello from Filtered Endpoint";
   }
 
+  //===================================================================
+  // NOT FILTERED
+  //===================================================================
+  @ResponseBody
+  @RequestMapping("NotFiltered")
+  String notFiltered() {
+    System.out.println("CONTROLLER: NOT Filtered");
+    return "Hello from NOT Filtered Endpoint";
+  }
 }
